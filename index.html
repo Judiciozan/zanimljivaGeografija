@@ -3,9 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index1</title>
+    <title>Zanimljiva Geografija</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    
+    <div>
+        <button class="trigger">Promeni Username</button>
+        
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                <h2>Dobrodošli</h2>
+                <h4>Molimo Vas unesite svoj Username</h4>
+                <form action="" id="usernameForm">
+                    <label for="">Username</label>
+                    <input type="text" id="usernameInput">
+                    <input type="submit" value="Potvrdi">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="predlogForma" class="centar"> 
+        <h2 class="centar">Predlog pojmova</h2>
+        <form action="" id="noviUnosForm" class="centar">
+            <label>Kategorija</label>
+            <select name="kategorija" id="kategorijaSelect">
+                <option value="Drzava">Država</option>
+                <option value="Grad">Grad</option>
+                <option value="Biljka">Biljka</option>
+                <option value="Zivotinja">Životinja</option>
+                <option value="Reka">Reka</option>
+                <option value="Planina">Planina</option>
+                <option value="Objekat">Objekat</option>    
+            </select>
+            <br>
+            <label for="">Pojam</label>
+            <input type="text" id="pojamInput">
+            <br>
+            <input type="submit" value="Unesi pojam">
+        </form>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAMqvJCqcHdJ5kcmZ-f3rkL1MAz80R8Sso",
+        authDomain: "zgeografija-2dad3.firebaseapp.com",
+        databaseURL: "https://zgeografija-2dad3.firebaseio.com",
+        projectId: "zgeografija-2dad3",
+        storageBucket: "zgeografija-2dad3.appspot.com",
+        messagingSenderId: "443855492737",
+        appId: "1:443855492737:web:3fc058b2ffb9ec11d99f80"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+    </script>
+
+    <script src="app.js" type="module" ></script>
+    <script src="pojam.js" type="module" ></script>
 </body>
 </html>
