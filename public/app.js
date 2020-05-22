@@ -1,5 +1,7 @@
-
 import {Pojam} from "./pojam.js";
+import { ispisHof } from "./functions.js";
+
+
 
 
 
@@ -13,6 +15,8 @@ let usernameInput = document.querySelector("#usernameInput");
 let noviUnosForm = document.querySelector("#noviUnosForm");
 let kategorijaSelect = document.querySelector("#kategorijaSelect");
 let pojamInput = document.querySelector("#pojamInput");
+let divHof = document.querySelector("#divHof");
+
 
 
 
@@ -26,9 +30,18 @@ function windowOnClick(event) {
     }
 }
 
+//deo za 
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 
+if(localStorage.usernameLS){
+    closeButton.setAttribute("style", `visibility: visible`);
+    window.addEventListener("click", windowOnClick);
+    
+} else {
+    toggleModal();
+    closeButton.setAttribute("style", `visibility: hidden`);
+}
 
 usernameForm.addEventListener('submit' , e => {
     e.preventDefault();
@@ -46,34 +59,28 @@ usernameForm.addEventListener('submit' , e => {
 
     usernameForm.reset();
     console.log(username);
-
 });
 
-if(localStorage.usernameLS){
-    closeButton.setAttribute("style", `visibility: visible`);
-    window.addEventListener("click", windowOnClick);
-    
-} else {
-    toggleModal();
-    closeButton.setAttribute("style", `visibility: hidden`);
-}
 
 noviUnosForm.addEventListener("submit", e => {
     e.preventDefault();
 
     let kategorija = kategorijaSelect.value;
-    let pojam =  pojamInput.value.replace(/[^a-zA-Z]+/g, '');
+    let pojam =  pojamInput.value.replace(/[^a-žA-Ž]+/g, '');
 
     if(!pojam) {
         alert('Unos nije validan');
     }
     else {
         pojam = pojam[0].toUpperCase() + pojam.slice(1).toLowerCase(); 
-
         let unos = new Pojam (kategorija, pojam);
-
         unos.proveraPojma();
         console.log(kategorija, pojam);
     }
     noviUnosForm.reset();
 });
+
+
+//ne diraj
+ispisHof(divHof);
+

@@ -1,3 +1,6 @@
+li {
+    list-style: none;
+}
 .modal {
     position: fixed;
     left: 0;

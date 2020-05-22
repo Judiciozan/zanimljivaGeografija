@@ -2,6 +2,7 @@ export class Pojam {
     constructor(k, v){
         this.kategorija = k;
         this.vrednost = v;
+        this.pocetnoSlovo;
         this.pojmovi = db.collection("pojmovi");
     }
 
@@ -21,10 +22,17 @@ export class Pojam {
     async addPojam(){
         let date = new Date();
 
+        let pocetnoSlovo = this.vrednost;
+        if (pocetnoSlovo.startsWith("Nj") || pocetnoSlovo.startsWith("Lj") || pocetnoSlovo.startsWith("Dž")) {
+            pocetnoSlovo = pocetnoSlovo.slice(0,2) 
+        } else {
+            pocetnoSlovo = pocetnoSlovo[0];
+        }
+
         let docPojam = {
             kategorija : this.kategorija ,
             korisnik : localStorage.usernameLS,
-            pocetnoSlovo : this.vrednost[0],
+            pocetnoSlovo : pocetnoSlovo,
             pojam : this.vrednost,
             vreme : firebase.firestore.Timestamp.fromDate(date)  
         }   
