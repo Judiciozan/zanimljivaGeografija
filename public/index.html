@@ -10,8 +10,7 @@
 <body>
     <div>
         <button class="trigger">Promeni Username</button>
-        
-        <div class="modal">
+        <div class="modal" id="divUsername">
             <div class="modal-content">
                 <span class="close-button">×</span>
                 <h2>Dobrodošli</h2>
@@ -48,6 +47,59 @@
     <div class="centar">
         <h2 class="centar">Hall of Fame</h2>
         <div id="divHof" class="centar">
+            <ol id="olHof">
+
+            </ol>
+        </div>
+    </div>
+    <div id="divIgraKomp" class="centar">
+        <div class="centar">
+            <button id="btnNovaIgra">Nova igra</button>
+            <form id="formIgraKomp">
+                <span id="spanIzabranoSlovo"></span><br>
+                <label for="">Država:</label>
+                <input type="text" name="" id="inputDrzava"><br>
+                <label for="">Grad:</label>
+                <input type="text" name="" id="inputGrad"><br>
+                <label for="">Reka:</label>
+                <input type="text" name="" id="inputReka"><br>
+                <label for="">Planina:</label>
+                <input type="text" name="" id="inputPlanina"><br>
+                <label for="">Životinja:</label>
+                <input type="text" name="" id="inputZivotinja"><br>
+                <label for="">Biljka:</label>
+                <input type="text" name="" id="inputBiljka"><br>
+                <label for="">Objekat:</label>
+                <input type="text" name="" id="inputObjekat"><br>
+                <label>Preostalo vreme:</label>
+                <span id="preostaloVreme"></span><br>
+                <input type="submit" id="zavrsioSam" value="Završio sam!">
+            </form>
+        </div>
+        
+    </div>
+    <div>
+        <div id="divOdgovori" class="modal">
+            <div class="modal-content" >
+                <div class="odgovori" id="div1">
+                    <h2>Igrač</h2>
+                    <table id="tabelaIgrac">
+
+                    </table>
+                </div>
+                <div class="odgovori" id="div2">
+                    <h2><span id="brPoenaIgrac"></span> VS <span id="brPoenaKomp"></span></h2>
+                    <h3 id="pobednik"></h3>
+
+                    <button id="zatvoriIgru">Zatvori</button>
+                </div>
+                <div class="odgovori" id="div3">
+                    <h2>Kompjuter</h2>
+                    <table id="tabelaKomp">
+
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -1,3 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+.odgovori {
+    float: left; 
+    width: 33%;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/* #div1{
+    background-color: blue;
+}
+#div2{
+    background-color: yellow;
+}
+#div3{
+    background-color:red;
+} */
 li {
     list-style: none;
 }
@@ -20,7 +41,8 @@ li {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 1rem 1.5rem;
-    width: 24rem;
+    /* width: 24rem; */
+    width: 50%;
     border-radius: 0.5rem;
 }
 .close-button {
@@ -46,4 +68,13 @@ li {
     margin: auto;
     width: 50%;
     padding: 10px;
+}
+
+.visible {
+    /*visibility: visible;*/
+    display: none;
+}
+.no-visible {
+    display: none;
+    /*visibility: hidden;*/
 }

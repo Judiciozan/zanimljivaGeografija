@@ -31,3 +31,14 @@ export let ispisHof = (destination) => {
             console.error("Error getting documents: ", error);
     });
 }
+
+export let sreditiUnos = (value) => {
+    let unos = value.replace(/[^a-žA-Ž]+/g, '');
+    unos = unos.slice(0,1).toUpperCase() + unos.slice(1).toLowerCase(); 
+    return unos;
+}
+
+export let random = (niz) => {
+    let x = Math.floor(Math.random() * niz.length);
+    return niz[x];
+}
