@@ -109,7 +109,7 @@ noviUnosForm.addEventListener("submit", e => {
 
 
 //ne diraj
-//ispisHof(olHof);
+ispisHof(olHof);
 
 
 //formIgraKomp.classList.toggle("no-visible");
