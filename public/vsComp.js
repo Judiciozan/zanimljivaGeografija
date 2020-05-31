@@ -75,8 +75,8 @@ let proveraRezultata = (kategorija, pocetnoSlovo, vrednostPolja, rezKomp, rezIgr
         rezKomp.push(brKomp);
         rezIgrac.push(brIgrac);
 
-        //if(kategorija=="Zivotinja") {kategorija="Životinja"};
-        //if(kategorija=="Drzava") {kategorija="Država"}; 
+        if(kategorija=="Zivotinja") {kategorija="Životinja"};
+        if(kategorija=="Drzava") {kategorija="Država"}; 
         
         destination1.innerHTML += `<tr> <td>${kategorija}</td> <td>${vrednostPolja}</td> <td>${brIgrac}</td></tr>`;
         destination2.innerHTML += `<tr> <td>${brKomp}</td> <td>${komp}</td> <td>${kategorija}</td></tr>`;
