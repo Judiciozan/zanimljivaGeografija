@@ -3,7 +3,7 @@ import {random} from "./functions.js"
 
 export let vsComp = (slovo, nizOdgovora, rezKomp, rezIgrac, destination1, destination2) => {
 
-    let kategorije = ["Drzava", "Grad", "Reka", "Planina", "Zivotinja", "Biljka", "Objekat"];
+    let kategorije = ["Drzava", "Grad", "Reka", "Planina", "Zivotinja", "Biljka", "Predmet"];
 
     kategorije.forEach((k,i) => {
         proveraRezultata(k, slovo, nizOdgovora[i], rezKomp, rezIgrac, destination1, destination2);
@@ -67,14 +67,16 @@ let proveraRezultata = (kategorija, pocetnoSlovo, vrednostPolja, rezKomp, rezIgr
             }
 
         } else {
+            komp = "nema pojam";
+
             brKomp = 0;
             brIgrac = 0;
         }         
         rezKomp.push(brKomp);
         rezIgrac.push(brIgrac);
 
-        if(kategorija=="Zivotinja") {kategorija="Životinja"};
-        if(kategorija=="Drzava") {kategorija="Država"}; 
+        //if(kategorija=="Zivotinja") {kategorija="Životinja"};
+        //if(kategorija=="Drzava") {kategorija="Država"}; 
         
         destination1.innerHTML += `<tr> <td>${kategorija}</td> <td>${vrednostPolja}</td> <td>${brIgrac}</td></tr>`;
         destination2.innerHTML += `<tr> <td>${brKomp}</td> <td>${komp}</td> <td>${kategorija}</td></tr>`;

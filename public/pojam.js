@@ -51,8 +51,10 @@ export class Pojam {
             if (snapshot.docs.length == 0) {
                 this.addPojam();
                 alert("Uspesno dodat pojam");
+                //console.log("Dodat");
             } else {
                 alert("Pojam vec postoji u bazi podataka");
+                //console.log("već postoji");
             }
             
         })

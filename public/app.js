@@ -25,7 +25,7 @@ let inputDrzava = document.querySelector("#inputDrzava");
 let inputGrad = document.querySelector("#inputGrad");
 let inputBiljka = document.querySelector("#inputBiljka");
 let inputZivotinja = document.querySelector("#inputZivotinja");
-let inputObjekat = document.querySelector("#inputObjekat");
+let inputPredmet = document.querySelector("#inputPredmet");
 let inputReka = document.querySelector("#inputReka");
 let inputPlanina = document.querySelector("#inputPlanina");
 let preostaloVreme = document.querySelector("#preostaloVreme");
@@ -109,7 +109,7 @@ noviUnosForm.addEventListener("submit", e => {
 
 
 //ne diraj
-ispisHof(olHof);
+//ispisHof(olHof);
 
 
 //formIgraKomp.classList.toggle("no-visible");
@@ -119,8 +119,8 @@ ispisHof(olHof);
 
 let vreme;
 let izabranoSlovo;
-// let slova = ['A', 'B', 'C', 'Č', 'Ć', 'D', 'Dž', 'Đ', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Lj', 'M', 'N', 'Nj', 'O', 'P', 'R', 'S', 'Š', 'T', 'U', 'V', 'Z', 'Ž'];
-let slova = ['A', 'B', 'M', 'N'];
+//let slova = ['A', 'B', 'C', 'Č', 'Ć', 'D', 'Dž', 'Đ', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Lj', 'M', 'N', 'Nj', 'O', 'P', 'R', 'S', 'Š', 'T', 'U', 'V', 'Z', 'Ž'];
+let slova = ["Š"];
 let timer;
 var qwe;
 var rezIgrac = [];
@@ -135,7 +135,7 @@ btnNovaIgra.addEventListener('click', e => {
     izabranoSlovo = random(slova);
     spanIzabranoSlovo.innerHTML=`Izabrano slovo je: ${izabranoSlovo}`;
 
-    let time = 60;
+    let time = 15;
     if(vreme) {clearInterval(vreme)};
 
     vreme = setInterval(() => {
@@ -155,7 +155,7 @@ formIgraKomp.addEventListener('submit', e => {
     e.preventDefault();
     clearInterval(vreme);
     zavrsioSam.disabled = true;
-    formIgraKomp.reset();
+    
     preostaloVreme.innerHTML =``;
     spanIzabranoSlovo.innerHTML =``;
     
@@ -171,9 +171,9 @@ formIgraKomp.addEventListener('submit', e => {
     let planina = sreditiUnos(inputPlanina.value) || "nista";
     let zivotinja = sreditiUnos(inputZivotinja.value) || "nista";
     let biljka = sreditiUnos(inputBiljka.value) || "nista";
-    let objekat = sreditiUnos(inputObjekat.value) || "nista";
+    let predmet = sreditiUnos(inputPredmet.value) || "nista";
 
-    let nizOdgovora = [drzava, grad, reka, planina, zivotinja, biljka, objekat]
+    let nizOdgovora = [drzava, grad, reka, planina, zivotinja, biljka, predmet]
 
     
     vsComp(izabranoSlovo, nizOdgovora, rezKomp, rezIgrac, tabelaIgrac, tabelaKomp);
@@ -209,7 +209,7 @@ formIgraKomp.addEventListener('submit', e => {
     }, 200);
 
     
-    
+    formIgraKomp.reset();
     
 });
 
@@ -228,11 +228,18 @@ zatvoriIgru.addEventListener("click", e => {
 
 // let wordArray = [];
 // let words = '';
-// wordArray = words.split(' ');
 
 
-// wordArray.forEach((word,i) => {
-//     let p = new Pojam("Biljka", wordArray[i]);
+// //let words2 = ''
+
+// wordArray = words.split(" ");
+
+// console.log(wordArray);
+// let blabla = new Set (wordArray);
+// console.log(blabla);
+
+// blabla.forEach((word,i) => {
+//     let p = new Pojam("Planina", word);
 //     p.proveraPojma();
 //     console.log(word);
 // });
