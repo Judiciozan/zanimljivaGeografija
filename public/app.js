@@ -135,7 +135,7 @@ btnNovaIgra.addEventListener('click', e => {
     izabranoSlovo = random(slova);
     spanIzabranoSlovo.innerHTML=`Izabrano slovo je: ${izabranoSlovo}`;
 
-    let time = 15;
+    let time = 60;
     if(vreme) {clearInterval(vreme)};
 
     vreme = setInterval(() => {
